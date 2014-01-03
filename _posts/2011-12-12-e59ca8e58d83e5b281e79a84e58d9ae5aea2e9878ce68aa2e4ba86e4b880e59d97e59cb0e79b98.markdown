@@ -1,0 +1,13 @@
+---
+author: TheC
+comments: true
+date: 2011-12-12 06:49:26+00:00
+layout: post
+slug: '%e5%9c%a8%e5%8d%83%e5%b2%81%e7%9a%84%e5%8d%9a%e5%ae%a2%e9%87%8c%e6%8a%a2%e4%ba%86%e4%b8%80%e5%9d%97%e5%9c%b0%e7%9b%98'
+title: 在千岁的博客里抢了一块地盘
+wordpress_id: 107
+categories:
+- ACFUN
+---
+
+于是就在这里写东西吧。本来打算自己弄个blog，懒得去搭建PHP环境，AC已经没有新的PHP服务器了，新浪的博客一发东西就中了关键词的枪。话说最近小区里老有人用某雷子拖毛片儿，弄得我SSH连不上，郁闷。出去觅食忘了取钱，ORZ……

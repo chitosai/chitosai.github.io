@@ -1,0 +1,19 @@
+---
+author: TheC
+comments: true
+date: 2011-12-25 20:36:55+00:00
+layout: post
+slug: '136'
+title: 下一代弹幕系统(Amino)投入研发
+wordpress_id: 140
+categories:
+- ACFUN
+---
+
+用户端实现语言：Flash/HTML5
+服务端实现语言：C#/JAVA
+服务端操作系统：Windows/Linux
+数据库：SQL SERVER/SQL SERVER EXPRESS/JSON
+是否开源：是
+授权协议：Apache V2
+特性：分布式处理，IOS兼容性，无单点故障，单评论可追踪。

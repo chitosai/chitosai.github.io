@@ -1,0 +1,105 @@
+---
+author: TheC
+comments: true
+date: 2012-01-17 18:25:29+00:00
+layout: post
+slug: mytest
+title: 语法高亮测试
+wordpress_id: 217
+categories:
+- ACFUN
+---
+
+本文用以测试wp的语法高亮功能，看起来这家伙识别能力不行啊！
+<!-- more -->
+AS3
+[as3]
+public function detecteBaka():void
+{
+  var 千歳:Person = new Person();
+  if(千歳 == Person.Baka)
+  {
+      //true;
+  }
+  else
+  {
+      千歳 = Person.Baka
+  }
+  trace("Baka detected!");
+}
+[/as3]
+C#
+[csharp]
+public void detecteBaka()
+{
+    Person 千歳 = new Person();
+    if(千歳 == Person.Baka)
+    {
+        //true;
+    }
+    else
+    {
+        千歳 = Person.Baka
+    }
+    Console.writeLine("Baka detected!");
+}
+[/csharp]
+CPP
+[cpp]
+void detecteBaka()
+{
+    \*Person 千歳 = new Person();
+    if(千歳 == Person->Baka)
+    {
+        //true;
+    }
+    else
+    {
+        千歳 = Person->Baka
+    }
+    cout >> "Baka detected!" >> endl;
+}
+[/cpp]
+JAVA
+[java]
+public void detecteBaka()
+{
+    Person 千歳 = new Person();
+    if(千歳 == Person.Baka)
+    {
+        //true;
+    }
+    else
+    {
+        千歳 = Person.Baka
+    }
+    System.out.println("Baka detected!");
+}
+[/java]
+Python
+[python]
+def detecteBaka:
+    千歳 = System.getPerson()
+    if(千歳 = Person.Baka):
+        pass
+        #true
+    else:
+        千歳 = Person.Baka
+    print("Baka detected!")
+[/python]
+Javascript:
+[javascript]
+function detecteBaka()
+{
+    var 千歳 = new Person();
+    if(千歳 == Person.Baka)
+    {
+        //true;
+    }
+    else
+    {
+        千歳 = Person.Baka
+    }
+    window.alert("Baka detected!");
+}
+[/javascript]

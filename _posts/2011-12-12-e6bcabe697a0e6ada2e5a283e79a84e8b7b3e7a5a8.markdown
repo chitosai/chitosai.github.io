@@ -1,0 +1,13 @@
+---
+author: TheC
+comments: true
+date: 2011-12-12 12:24:56+00:00
+layout: post
+slug: '%e6%bc%ab%e6%97%a0%e6%ad%a2%e5%a2%83%e7%9a%84%e8%b7%b3%e7%a5%a8'
+title: 漫无止境的跳票
+wordpress_id: 111
+categories:
+- ACFUN
+---
+
+TF/IDF算法没搞定，继续跳！不过好消息是今晚应该能出RC了……Hope that
