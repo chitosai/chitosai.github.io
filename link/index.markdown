@@ -2,10 +2,15 @@
 author: TheC
 comments: true
 date: 2012-01-08 14:16:23+00:00
-layout: page
+layout: default
 slug: link
 title: 友情链接
-wordpress_id: 200
 ---
 
-诶..咦！好像把友联的页面给搞丢了！...这这这，等我修复一下...
+迁移博客的时候弄丢了以前的友链表...我有罪（土下座。
+
+<ul class="posts">
+{% for link in site.data.links %}
+  <li><span>{{ link.desc }}</span> &raquo; <a href="{{ link.url }}">{{ link.name }}</a></li>
+{% endfor %}
+</ul>
