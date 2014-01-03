@@ -1,8 +1,8 @@
 url: http://blog.thec.me/
 name: 千歳屋
-description: 生存战略中
+description: 生存ー戦略！！
 encoding: utf-8
+author: TheC
 
 markdown: redcarpet
-
 permalink: /w/:title
