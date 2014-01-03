@@ -13,7 +13,7 @@ categories:
 本文用以测试wp的语法高亮功能，看起来这家伙识别能力不行啊！
 <!-- more -->
 AS3
-[as3]
+{% highlight as3 %}
 public function detecteBaka():void
 {
   var 千歳:Person = new Person();
@@ -27,9 +27,9 @@ public function detecteBaka():void
   }
   trace("Baka detected!");
 }
-[/as3]
+{% endhighlight %}
 C#
-[csharp]
+{% highlight csharp %}
 public void detecteBaka()
 {
     Person 千歳 = new Person();
@@ -43,9 +43,9 @@ public void detecteBaka()
     }
     Console.writeLine("Baka detected!");
 }
-[/csharp]
+{% endhighlight %}
 CPP
-[cpp]
+{% highlight cpp %}
 void detecteBaka()
 {
     \*Person 千歳 = new Person();
@@ -59,9 +59,9 @@ void detecteBaka()
     }
     cout >> "Baka detected!" >> endl;
 }
-[/cpp]
+{% endhighlight %}
 JAVA
-[java]
+{% highlight java %}
 public void detecteBaka()
 {
     Person 千歳 = new Person();
@@ -75,9 +75,9 @@ public void detecteBaka()
     }
     System.out.println("Baka detected!");
 }
-[/java]
+{% endhighlight %}
 Python
-[python]
+{% highlight python %}
 def detecteBaka:
     千歳 = System.getPerson()
     if(千歳 = Person.Baka):
@@ -86,9 +86,9 @@ def detecteBaka:
     else:
         千歳 = Person.Baka
     print("Baka detected!")
-[/python]
+{% endhighlight %}
 Javascript:
-[javascript]
+{% highlight javascript %}
 function detecteBaka()
 {
     var 千歳 = new Person();
@@ -102,4 +102,4 @@ function detecteBaka()
     }
     window.alert("Baka detected!");
 }
-[/javascript]
+{% endhighlight %}

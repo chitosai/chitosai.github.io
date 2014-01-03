@@ -1,6 +1,8 @@
-url: http://vm-0.chitosai.kd.io/
+url: http://blog.thec.me/
 name: 千歳屋
 description: 生存战略中
 encoding: utf-8
+
+markdown: redcarpet
 
 permalink: /w/:title
