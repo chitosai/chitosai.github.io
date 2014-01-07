@@ -10,6 +10,6 @@ categories:
 - ACFUN
 ---
 
-[![年鉴封面](http://thec.me/wp-content/uploads/2011/12/45QNC6S@YUJWDIAC96S@LI-239x300.jpg)](http://thec.me/wp-content/uploads/2011/12/45QNC6S@YUJWDIAC96S@LI.jpg)
+<p class="image-placeholder">[原图已丢失]</p>
 
 不知道最终会不会发布

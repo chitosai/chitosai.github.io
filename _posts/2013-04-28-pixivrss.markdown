@@ -17,26 +17,30 @@ tags:
 
 懒得每天刷p站，又不想错过新出的好图，想来想去果然还是把p站做成rss订阅到GR里最方便啦
 
-本日 [http://rakuen.thec.me/PixivRss/daily-20](http://rakuen.thec.me/PixivRss/daily-20)
-本周 [http://rakuen.thec.me/PixivRss/weekly-20](http://rakuen.thec.me/PixivRss/weekly-20)
-本月 [http://rakuen.thec.me/PixivRss/monthly-20](http://rakuen.thec.me/PixivRss/monthly-20)
-原创 [http://rakuen.thec.me/PixivRss/original-20](http://rakuen.thec.me/PixivRss/original-20)
-新人 [http://rakuen.thec.me/PixivRss/rookie-20](http://rakuen.thec.me/PixivRss/rookie-20)
-男性 [http://rakuen.thec.me/PixivRss/male-20](http://rakuen.thec.me/PixivRss/male-20)
-女性 [http://rakuen.thec.me/PixivRss/female-20](http://rakuen.thec.me/PixivRss/female-20)
-=======================================================
+- 本日 <a href="http://rakuen.thec.me/PixivRss/daily-20" target="_blank">http://rakuen.thec.me/PixivRss/daily-20</a>
+- 本周 <a href="http://rakuen.thec.me/PixivRss/weekly-20" target="_blank">http://rakuen.thec.me/PixivRss/weekly-20</a>
+- 本月 <a href="http://rakuen.thec.me/PixivRss/monthly-20" target="_blank">http://rakuen.thec.me/PixivRss/monthly-20</a>
+- 原创 <a href="http://rakuen.thec.me/PixivRss/original-20" target="_blank">http://rakuen.thec.me/PixivRss/original-20</a>
+- 新人 <a href="http://rakuen.thec.me/PixivRss/rookie-20" target="_blank">http://rakuen.thec.me/PixivRss/rookie-20</a>
+- 男性 <a href="http://rakuen.thec.me/PixivRss/male-20" target="_blank">http://rakuen.thec.me/PixivRss/male-20</a>
+- 女性 <a href="http://rakuen.thec.me/PixivRss/female-20" target="_blank">http://rakuen.thec.me/PixivRss/female-20</a>
+
 UPDATE:
+
 新增R-18系订阅源
 
-每日R-18 [http://rakuen.thec.me/PixivRss/daily_r18-20](http://rakuen.thec.me/PixivRss/daily_r18-20)
-每周R-18 [http://rakuen.thec.me/PixivRss/weekly_r18-20](http://rakuen.thec.me/PixivRss/weekly_r18-20)
-男性向R-18 [http://rakuen.thec.me/PixivRss/male_r18-20](http://rakuen.thec.me/PixivRss/male_r18-20)
-女性向R-18 [http://rakuen.thec.me/PixivRss/female_r18-20](http://rakuen.thec.me/PixivRss/female_r18-20)
-每日R-18G（猎奇慎订阅） [http://rakuen.thec.me/PixivRss/r18g-20 ](http://rakuen.thec.me/PixivRss/r18g-20)
+- 每日R-18 <a href="http://rakuen.thec.me/PixivRss/daily_r18-20" target="_blank">http://rakuen.thec.me/PixivRss/daily_r18-20</a>
+- 每周R-18 <a href="http://rakuen.thec.me/PixivRss/weekly_r18-20" target="_blank">http://rakuen.thec.me/PixivRss/weekly_r18-20</a>
+- 男性向R-18 <a href="http://rakuen.thec.me/PixivRss/male_r18-20" target="_blank">http://rakuen.thec.me/PixivRss/male_r18-20</a>
+- 女性向R-18 <a href="http://rakuen.thec.me/PixivRss/female_r18-20" target="_blank">http://rakuen.thec.me/PixivRss/female_r18-20</a>
+- 每日R-18G（猎奇慎订阅） <a href="http://rakuen.thec.me/PixivRss/r18g-20" target="_blank">http://rakuen.thec.me/PixivRss/r18g-20 </a>
 
-网址中的-20表示订阅排名前20的图，有10、20、30、40、50五种数量可选，例如想订阅排名前10的图就把-20改为-10
-周排行、月排行每日18点左右更新，其他排行每4小时更新
-**同一排行连续上榜的图片不会重复出现**。假设图A连续五天出现在受男性欢迎排行上，不论其排名如何变化都只会在最初上榜时出现一次
+网址中的-20表示订阅排名前20的图，有10、20、30、40、50五种数量可选，例如想订阅排名前10的图就把-20改为-10。
 
-在GR默认模式下就是这样的效果
+周排行、月排行每日18点左右更新，其他排行每4小时更新。
+
+**同一排行连续上榜的图片不会重复出现**。假设图A连续五天出现在受男性欢迎排行上，不论其排名如何变化都只会在最初上榜时出现一次。
+
+在GR默认模式下就是这样的效果：
+
 ![](http://thec.u.qiniudn.com/eXfYDJz.jpg)
