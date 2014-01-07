@@ -14,7 +14,7 @@ html, body { height: 100%; }
 
 body {
   background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
+  font: 13.34px '微软雅黑', 'Microsoft Yahei', Helvetica, Arial, sans-serif;
   font-size: small;
   text-align: center;
 }
@@ -23,7 +23,12 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 100%; }
 
 h1 { margin-bottom: 1em; }
-p { margin: 1em 0; }
+h3 { 
+  color: #69f; 
+  border-bottom: 1px solid #ccc;
+  margin: 30px 0 0;
+}
+p { margin: 1em 0; line-height: 1.625; }
 
 a         { color: #00a; }
 a:hover   { color: #000; }
@@ -146,6 +151,14 @@ a:visited { color: #a0a; }
 
 .post pre code {
   border: none;
+}
+
+.post img{
+  max-width: 100%;
+}
+
+.post .image-placeholder{
+  color: #aaa;
 }
 
 /* terminal */
