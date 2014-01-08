@@ -21,7 +21,7 @@
               <a href="/">{{ site.name }}</a> -
               <a href="/i">关于我</a> -
               <a href="/link">友情链接</a> -
-              <a href="/rss">订阅</a>
+              <a href="{{ site.rss_path }}">订阅</a>
             </h1>
           </div>
 
@@ -30,7 +30,7 @@
           <div class="footer">
             <div class="contact">
               <p>
-                 &copy; {{ site.name }} | <a href="/rss">RSS</a>
+                 &copy; {{ site.name }} | <a href="{{ site.rss_path }}">RSS</a>
               </p>
             </div>
           </div>

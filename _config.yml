@@ -7,4 +7,6 @@ author: TheC
 markdown: redcarpet
 permalink: /w/:title
 
+rss_path: /feed
+
 comments: true
