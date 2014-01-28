@@ -1,0 +1,23 @@
+---
+author: TheC
+comments: true
+layout: post
+title: Pixiv播报姬
+categories:
+- 杂物屋
+---
+
+之前为了<del>偷懒</del>收图做了一个[订阅Pixiv排行的RSS](http://blog.thec.me/w/pixivrss/)，这次将偷懒程度更进一步把所有全年龄向的排行都做成了微博播报娘，今后只要轻轻点一下关注就可以看到每天的新图啦简直不能更<del>懒</del>赞！
+
+![播报姬！](http://thec.u.qiniudn.com/pchan.jpg)
+
+安全起见只做了全年龄向排行的播报姬：
+[每日](http://weibo.com/pixivchan)、
+[每周](http://weibo.com/pchanweekly)、
+[每月](http://weibo.com/pchanmonthly)、
+[原创](http://weibo.com/pchanoriginal)、
+[新人](http://weibo.com/pchanrookie)、
+[男性向](http://weibo.com/pchanmale)、
+[女性向](http://weibo.com/pchanfemale)。播报姬目前还处在测试阶段，如果遇到问题或者发现失效欢迎反馈。
+
+BTW，因为使用了微博图床，所有全年龄向排行RSS今后能够提供最大宽度为600px的预览图了（不过会打上水印，想收无水印大图还是请自行去P站下载，因为画师们都在内心深处期待着你的10分和评论啊！光收图是不对的哦。
