@@ -161,6 +161,12 @@ a:visited { color: #a0a; }
   color: #aaa;
 }
 
+.post blockquote{
+  background: #f7f7f7;
+  border-left: 3px solid #69f;
+  padding: 1px 20px;
+}
+
 /* terminal */
 .post pre.terminal {
   border: 1px solid #000;
